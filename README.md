@@ -13,3 +13,5 @@ Desirables:
 - Responsive web design
 - Dark theme for late-night working adults with babies and sleeping partners
 - Random recipe suggestions at ingredient selection page
+- Save favorite recipes
+- Generate meal plan based on favorite recipes
