@@ -1,27 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main';
 import RecipeReviewCard from './components/Card';
+import Navigation from './navigation/Navigation';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Main />
+      {/* <header className="App-header"> */}
+
+       <Navigation />
+      {/* </header> */}
+      <Main />
         <RecipeReviewCard />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
