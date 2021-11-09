@@ -1,5 +1,4 @@
-{
-    "recipes": [
+const recipes = [
         {
             "vegetarian": false,
             "vegan": false,
@@ -2258,4 +2257,5 @@
             "spoonacularSourceUrl": "https://spoonacular.com/pasta-with-peas-and-italian-sausage-654935"
         }
     ]
-}
+
+export default recipes;

@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './components/Main';
-import RecipeReviewCard from './components/Card';
+// import RecipeReviewCard from './components/Card';
 import Navigation from './navigation/Navigation';
 
 function App() {
