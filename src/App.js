@@ -11,7 +11,7 @@ function App() {
        <Navigation />
       {/* </header> */}
       <Main />
-        <RecipeReviewCard />
+        {/* <RecipeReviewCard /> */}
     </div>
   );
 }
