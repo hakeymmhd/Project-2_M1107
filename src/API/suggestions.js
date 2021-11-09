@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const URL =
-  "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=5&ignorePantry=true&ranking=1";
+"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=mediterranean&number=5";
 
 const options = {
   method: "GET",
@@ -36,7 +36,7 @@ const FetchData = () => {
   return (
     <div>
       <h1>Test Fetching Data</h1>
-      {/* <div>{JSON.stringify(data)}</div> */}
+      <div>{JSON.stringify(data)}</div>
     </div>
   );
 };
