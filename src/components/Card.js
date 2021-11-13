@@ -34,7 +34,7 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
-  console.log(props.name)
+  // console.log(props.name)
   const dishName = props.name;
   return (
     <Card sx={{ maxWidth: 345 }}>

@@ -1,10 +1,11 @@
 import React from "react";
 import keywords from "../API/Keywords";
 
-function KeywordList() {
+function KeywordList(props) {
+    
     let listSpices = keywords.spices.map((record, index) => {
         return (
-            <button key={index} onClick={() => {}}>{record}</button>
+            <button key={index} onClick={() => {props.parentCallback(record)}}>{record}</button>
         )
     })
 
@@ -38,7 +39,7 @@ function KeywordList() {
         )
     })
     return (
-        <div className="Keywords">Select your ingredients
+        <div className="Keywords"><h3>Select your ingredients</h3>
             <div className="Spices">Spices: {listSpices}</div>
             <div className="Pantry">Pantry: {listPantry}</div>
             <div className="Refrigerator">Refrigerator: {listRefrigerator}</div>

@@ -25,7 +25,7 @@ export default function RandomDisp () {
     }
     };
 
-    console.log(recipes[0].title)
+    // console.log(recipes[0].title)
     return (
         <>
             <Carousel responsive={responsive}>
