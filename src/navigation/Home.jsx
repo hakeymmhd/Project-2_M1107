@@ -9,9 +9,18 @@ export default function Home() {
     return (
         <>
             <p>Homepage</p>
-            <KeywordList />
+            <div className="Ingredients">
+                <input type="text" placeholder="Ingredient"></input>
+                <button type="submit">Submit</button>
+                <KeywordList />
+            </div>
+
+            
             {/* <FetchData />   API CALL */}
-            <RandomDisp />
+            <div className="carousel">
+                <RandomDisp />
+            </div>
+           
         </>
        
     )

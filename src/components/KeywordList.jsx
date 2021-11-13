@@ -39,12 +39,12 @@ function KeywordList() {
     })
     return (
         <div className="Keywords">Select your ingredients
-            <div className="Spices">{listSpices}</div>
-            <div className="Pantry">{listPantry}</div>
-            <div className="Refrigerator">{listRefrigerator}</div>
-            <div className="Condiments">{listCondiments}</div>
-            <div className="Vegetables">{listVegetables}</div>
-            <div className="CannedGoods">{listCannedGoods}</div>
+            <div className="Spices">Spices: {listSpices}</div>
+            <div className="Pantry">Pantry: {listPantry}</div>
+            <div className="Refrigerator">Refrigerator: {listRefrigerator}</div>
+            <div className="Condiments">Condiments: {listCondiments}</div>
+            <div className="Vegetables">Vegetables: {listVegetables}</div>
+            <div className="CannedGoods">Canned Goods: {listCannedGoods}</div>
         </div>
     )
 }
