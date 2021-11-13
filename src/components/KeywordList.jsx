@@ -11,31 +11,31 @@ function KeywordList(props) {
 
     let listPantry = keywords.pantry.map((record, index) => {
         return (
-            <button key={index} onClick={() => {}}>{record}</button>
+            <button key={index} onClick={() => {props.parentCallback(record)}}>{record}</button>
         )
     })
 
     let listRefrigerator = keywords.refrigerator.map((record, index) => {
         return (
-            <button key={index} onClick={() => {}}>{record}</button>
+            <button key={index} onClick={() => {props.parentCallback(record)}}>{record}</button>
         )
     })
 
     let listCondiments = keywords.condiments.map((record, index) => {
         return (
-            <button key={index} onClick={() => {}}>{record}</button>
+            <button key={index} onClick={() => {props.parentCallback(record)}}>{record}</button>
         )
     })
 
     let listVegetables = keywords.vegetables.map((record, index) => {
         return (
-            <button key={index} onClick={() => {}}>{record}</button>
+            <button key={index} onClick={() => {props.parentCallback(record)}}>{record}</button>
         )
     })
 
     let listCannedGoods = keywords.cannedGoods.map((record, index) => {
         return (
-            <button key={index} onClick={() => {}}>{record}</button>
+            <button key={index} onClick={() => {props.parentCallback(record)}}>{record}</button>
         )
     })
     return (
