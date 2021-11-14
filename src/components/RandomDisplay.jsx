@@ -25,17 +25,10 @@ export default function RandomDisp () {
     }
     };
 
-    // const RenderCard = recipes.forEach((element, index) => {
-    //     return(
-    //         <p>hi</p>
-    //     )
-    // })
-    recipes.forEach(element=>console.log(element));
     console.log(recipes.length)
     return (
         <>
             <Carousel responsive={responsive}>
-                {/* {RenderCard} */}
                 <div><RecipeReviewCard 
                     name={recipes[0].title} 
                     img={recipes[0].image} 

@@ -2,8 +2,7 @@ import React from "react";
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router-dom";
 // import FetchRequestData from "../API/RequestedSuggestions";
-import suggestedRecipes from "../API/RequestedSuggestions_Hard";
-import RandomDisp from "../components/RandomDisplay";
+import RequestDisplay from "../components/RequestDisplay";
 
 export default function ResultSummary() {
     const location = useLocation();
@@ -27,7 +26,7 @@ export default function ResultSummary() {
             <div className="keywords">
                 {displayList}
             </div>
-            {/* <div><RandomDisp /></div> */}
+            <div><RequestDisplay /></div>
             <button onClick={handleClick}>New Search</button>
             {/* <div className="results"><FetchRequestData /></div> */}
         </>
