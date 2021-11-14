@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RecipeReviewCard from "./Card"
-import recipes from '../API/RandomSuggestions'
+import recipes from '../API/RandomSuggestions_Hard'
 
 export default function RandomDisp () {
     
@@ -25,10 +25,17 @@ export default function RandomDisp () {
     }
     };
 
-    // console.log(recipes[0].title)
+    // const RenderCard = recipes.forEach((element, index) => {
+    //     return(
+    //         <p>hi</p>
+    //     )
+    // })
+    recipes.forEach(element=>console.log(element));
+    console.log(recipes.length)
     return (
         <>
             <Carousel responsive={responsive}>
+                {/* {RenderCard} */}
                 <div><RecipeReviewCard 
                     name={recipes[0].title} 
                     img={recipes[0].image} 

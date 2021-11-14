@@ -1,5 +1,5 @@
 import React from "react";
-import keywords from "../API/Keywords";
+import keywords from "./Keywords";
 
 function KeywordList(props) {
     

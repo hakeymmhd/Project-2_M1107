@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RandomDisp from "../components/RandomDisplay";
 import KeywordList from "../components/KeywordList";
+import { Link } from "react-router-dom"
 // import FetchData from "../API/suggestions";
 
 export default function Home() {
@@ -11,16 +12,26 @@ export default function Home() {
 
     const handleCallback = (childData) => {addToList(childData)};
     console.log(list);
+    const displayList = list.map((record, index) => {
+        return(
+            <p>{record}</p>
+        )
+    })
+
     return (
         <>
             <h1>Homepage</h1>
             <div className="Ingredients">
                 <input type="text" placeholder="Ingredient"></input>
-                <button type="submit">Submit</button>
+                <Link 
+                    to="/result-summary"
+                    state={{list}}
+                ><button type="submit">Submit</button></Link>
                 <KeywordList list={list} parentCallback={handleCallback } />
             </div>
 
             <h3>Selected ingredients</h3>
+            {displayList}
             {/* <FetchData />   API CALL */}
             <div className="carousel">
                 <h3>Some suggestions...</h3>
