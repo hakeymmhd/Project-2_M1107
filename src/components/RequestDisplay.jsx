@@ -2,6 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RecipeReviewCard from "./Card"
 import suggestedRecipes from "../API/RequestedSuggestions_Hard";
+import recipesById from "../API/RecipesById_Hard";
 
 export default function RequestDisplay () {
     
@@ -28,31 +29,32 @@ export default function RequestDisplay () {
     console.log(suggestedRecipes.length)
     return (
         <>
-            <Carousel responsive={responsive}>
-                <div><RecipeReviewCard 
+            <Carousel responsive={responsive} >
+                <div onClick={()=>console.log("JEFKASJEFKA")} ><RecipeReviewCard 
                     name={suggestedRecipes[0].title} 
                     img={suggestedRecipes[0].image} 
-                    typography={suggestedRecipes[0].summary} />
+                    typography={recipesById[0].summary} 
+                    />
                     </div>
                 <div><RecipeReviewCard 
                     name={suggestedRecipes[1].title} 
                     img={suggestedRecipes[1].image} 
-                    typography={suggestedRecipes[1].summary} />
+                    typography={recipesById[1].summary} />
                 </div>
                 <div><RecipeReviewCard 
                     name={suggestedRecipes[2].title} 
                     img={suggestedRecipes[2].image} 
-                    typography={suggestedRecipes[2].summary} />
+                    typography={recipesById[2].summary} />
                 </div>
                 <div><RecipeReviewCard 
                     name={suggestedRecipes[3].title} 
                     img={suggestedRecipes[3].image} 
-                    typography={suggestedRecipes[3].summary} />
+                    typography={recipesById[3].summary} />
                 </div>
                 <div><RecipeReviewCard 
                     name={suggestedRecipes[4].title} 
                     img={suggestedRecipes[4].image} 
-                    typography={suggestedRecipes[4].summary} />
+                    typography={recipesById[4].summary} />
                 </div>
             </Carousel>
         </>

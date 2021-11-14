@@ -37,7 +37,8 @@ export default function RecipeReviewCard(props) {
   // console.log(props.name)
   const dishName = props.name;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    // <Card sx={{ maxWidth: 345 }} onClick={(e)=>{console.log(e.target)}}>
+    <Card sx={{ maxWidth: 345 }} >
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
