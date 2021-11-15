@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../navigation/Home.jsx";
 import About from "../navigation/About";
 import ResultSummary from "../navigation/result-summary.jsx";
+import ResultDetailed from "../navigation/result-detailed.jsx";
 
 export default function Main () {
   return (
@@ -11,7 +12,8 @@ export default function Main () {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="//:result-summary" element={<ResultSummary />} />
+          <Route path="/:result-summary" element={<ResultSummary />} />
+          <Route path="/result-summary/:title" element={<ResultDetailed />} />
           <Route
             path="*"
             element={

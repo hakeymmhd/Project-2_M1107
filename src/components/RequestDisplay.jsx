@@ -1,8 +1,10 @@
+import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RecipeReviewCard from "./Card"
 import suggestedRecipes from "../API/RequestedSuggestions_Hard";
 import recipesById from "../API/RecipesById_Hard";
+import { Link } from "react-router-dom";
 
 export default function RequestDisplay () {
     
@@ -30,12 +32,15 @@ export default function RequestDisplay () {
     return (
         <>
             <Carousel responsive={responsive} >
+                <Link 
+                to={`/result-summary/${suggestedRecipes[0].title}`} >
                 <div onClick={()=>console.log("JEFKASJEFKA")} ><RecipeReviewCard 
                     name={suggestedRecipes[0].title} 
                     img={suggestedRecipes[0].image} 
                     typography={recipesById[0].summary} 
                     />
                     </div>
+                </Link>
                 <div><RecipeReviewCard 
                     name={suggestedRecipes[1].title} 
                     img={suggestedRecipes[1].image} 
