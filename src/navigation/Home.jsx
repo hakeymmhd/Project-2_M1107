@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 
 export default function Home() {
     const [list, setList] = useState([]);
+    // const [keywordStr, setKeywordStr] = useState("");
+    const [summaryData, setSummaryData] = useState([]);
     const addToList = (item) => {
         setList([item, ...list]);
     }
@@ -17,17 +19,18 @@ export default function Home() {
             <p>{record}</p>
         )
     })
-
+    // console.log(keywordStr);
     return (
         <>
             <h1>Homepage</h1>
             <div className="Ingredients">
                 <input type="text" placeholder="Ingredient"></input>
+                <button type="submit">Submit</button>
                 <Link 
                     to="/result-summary"
                     state={{list}}
-                ><button type="submit">Submit</button></Link>
-                <KeywordList list={list} parentCallback={handleCallback } />
+                ><button type="submit">Search Recipes</button></Link>
+                <KeywordList parentCallback={handleCallback } />
             </div>
 
             <h3>Selected ingredients</h3>

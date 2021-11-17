@@ -2,11 +2,11 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RecipeReviewCard from "./Card"
-import suggestedRecipes from "../API/RequestedSuggestions_Hard";
+// import suggestedRecipes from "../API/RequestedSuggestions_Hard";
 import recipesById from "../API/RecipesById_Hard";
 import { Link } from "react-router-dom";
 
-export default function RequestDisplay () {
+export default function RequestDisplay (props) {
     
     const responsive = {
     superLargeDesktop: {
@@ -28,11 +28,28 @@ export default function RequestDisplay () {
     }
     };
 
-    console.log(suggestedRecipes.length)
+    // console.log(suggestedRecipes.length)
+    console.log(props.data.length);
+    const renderCards = props.data.map((record, index) => {
+        return (
+            <Link 
+            to={`/result-summary/${props.data[index].title}`} >
+            <div className="card" onClick={()=>console.log("JEFKASJEFKA")} >
+                <RecipeReviewCard 
+                name={props.data[index].title} 
+                img={props.data[index].image} 
+                typography={recipesById[0].summary} 
+                />
+                </div>
+            </Link>
+        )
+    })
+
     return (
         <>
             <Carousel responsive={responsive} >
-                <Link 
+                {renderCards}
+                {/* <Link 
                 to={`/result-summary/${suggestedRecipes[0].title}`} >
                 <div onClick={()=>console.log("JEFKASJEFKA")} ><RecipeReviewCard 
                     name={suggestedRecipes[0].title} 
@@ -60,7 +77,7 @@ export default function RequestDisplay () {
                     name={suggestedRecipes[4].title} 
                     img={suggestedRecipes[4].image} 
                     typography={recipesById[4].summary} />
-                </div>
+                </div> */}
             </Carousel>
         </>
     );
