@@ -6,12 +6,26 @@ export default function ResultDetailed() {
     
    
     function RenderIngredients() {
-        let ingredientString = "";
-        quickApplePies.extendedIngredients.map((element)=> {
-            return element.name
+        return quickApplePies.extendedIngredients.map((element, index) => {
+            return (
+                <tr key={index+1}>
+                    <td>{element.amount}</td>
+                    <td>{element.unit}</td>
+                    <td>{element.name}</td>
+                </tr>
+            )
         });
-      
-        return ingredientString;
+    }
+
+    function RenderInstructions() {
+        return quickApplePies.analyzedInstructions[0].steps.map((element, index) => {
+            return (
+                <tr key={index+1}>
+                    <td>{element.number}</td>
+                    <td>{element.step}</td>
+                </tr>
+            )
+        })
     }
     // console.log(ingredientString)
     const RenderRecipe = () => {
@@ -21,8 +35,22 @@ export default function ResultDetailed() {
                 <p>{`Title: ${quickApplePies.title}`}</p>
                 <p>{`Cooking time: ${quickApplePies.readyInMinutes}`}</p>
                 <p>{`Serves: ${quickApplePies.servings}`}</p>
-                <p>{`Ingredients: `} </p>
-                <RenderIngredients />
+                <div>
+                    <h4>{`Ingredients: `} </h4>
+                    <table id="ingredients">
+                        <tbody>
+                            <RenderIngredients />
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4>{`Instructions: `} </h4>
+                    <table id="instructions">
+                        <tbody>
+                            <RenderInstructions />
+                        </tbody>
+                    </table>
+                </div>
                 
                 <section>{RenderIngredients}</section>
             </div>
