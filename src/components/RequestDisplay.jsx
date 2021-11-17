@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import RecipeReviewCard from "./Card"
 // import suggestedRecipes from "../API/RequestedSuggestions_Hard";
 import recipesById from "../API/RecipesById_Hard";
 import { Link } from "react-router-dom";
+import GetRecipeInfo from "../API/GetRecipeInformation";
 
 export default function RequestDisplay (props) {
-    
+    const [detailedData, setDetailedData] = useState([]);
+    const handleCallback = (childData) => {setDetailedData([...detailedData,childData])};
+
     const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -27,24 +30,28 @@ export default function RequestDisplay (props) {
         items: 1
     }
     };
-
+   
     // console.log(suggestedRecipes.length)
     console.log(props.data.length);
     const renderCards = props.data.map((record, index) => {
+    
         return (
             <Link 
             to={`/result-summary/${props.data[index].title}`} >
             <div className="card" onClick={()=>console.log("JEFKASJEFKA")} >
+                <GetRecipeInfo recipeID={props.data[index].id} parentCallback={handleCallback}/>
                 <RecipeReviewCard 
                 name={props.data[index].title} 
                 img={props.data[index].image} 
-                typography={recipesById[0].summary} 
+                // typography={detailedData[index].summary} 
                 />
                 </div>
             </Link>
         )
     })
 
+    console.log(detailedData);
+    
     return (
         <>
             <Carousel responsive={responsive} >

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const URL =
-"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=mediterranean&number=5";
+"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=mediterranean&number=3";
 
 const options = {
   method: "GET",

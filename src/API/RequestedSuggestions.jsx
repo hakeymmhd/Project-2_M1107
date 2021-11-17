@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const URL =
 "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=";
 
-const URL2 = "&number=5&ignorePantry=false&ranking=1"
+const URL2 = "&number=3&ignorePantry=false&ranking=1"
 
 const options = {
   method: "GET",

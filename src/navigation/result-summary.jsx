@@ -6,6 +6,7 @@ import RequestDisplay from "../components/RequestDisplay";
 
 export default function ResultSummary() {
     const [data, setData] = useState([]);
+   
     const [keywordStr, setKeywordStr] = useState("");
     const location = useLocation();
     let navigate = useNavigate();
@@ -39,6 +40,5 @@ export default function ResultSummary() {
             <button onClick={handleClick}>New Search</button>
             
         </>
-        
     )
 }
