@@ -6,7 +6,7 @@ https://cook-me-something.netlify.app
 
 Technologies:
 - React
-- Sponacular API
+- Spoonacular API
 - Material UI for card display
 - Carousel from react-multi-carousel
 - React Router v6
